@@ -14,6 +14,7 @@ public class GoogleSearchSteps extends PageSteps {
 
     @Given("^The client isn't on google page$")
     public void isNotHome() {
+        //Lippian
         GoogleHomeService.navegarWeb();
         throw new RuntimeException("the client is not on google page");
     }
@@ -28,4 +29,8 @@ public class GoogleSearchSteps extends PageSteps {
     public void statVerification() {
         GoogleSearchResultService.verifyResults();
     }
+
+
+
+
 }

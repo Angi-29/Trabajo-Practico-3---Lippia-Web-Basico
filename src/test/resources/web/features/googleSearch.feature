@@ -1,9 +1,9 @@
 Feature: As a potential client i need to search in google to find a web site
 
-  @Regression @Candidate @SearchCrowdar
-  Scenario: The client search by "crowdar"
+  @Candidate @SearchCrowdar
+  Scenario: The client search by "Crowdar"
     Given The client is on google page
-    When The client search for word crowdar
+    When The client search for word Crowdar
     Then The client verify that results are shown properly
 
   @Smoke @NoCandidate @SearchAutomation
@@ -12,7 +12,7 @@ Feature: As a potential client i need to search in google to find a web site
     When The client search for word Automation
     Then The client verify that results are shown properly
 
-  @Regression @ToBeAutomated @SearchDocker
+  @ToBeAutomated @SearchDocker
   Scenario: The client search by "Docker"
     Given The client is on google page
     When The client search for word Docker
@@ -23,3 +23,15 @@ Feature: As a potential client i need to search in google to find a web site
     Given The client isn't on google page
     When The client search for word Lippia
     Then The client verify that results are shown properly
+
+  @Regression @Candidate @NuevoTest @Search
+  Scenario Outline: Search by "<WordToSearch>"
+    Given The client is on google page
+    When The client search for word "<WordToSearch>"
+    Then The client verify that results are shown properly
+    Examples:
+      | WordToSearch    |
+      | Crowdar Academy |
+      | Calidad         |
+      | Software        |
+      | Testing         |
